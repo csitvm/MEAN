@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Accessing JavaScript JSON Objects</title>
+    <script>
+      function accessJSONObject() {
+        var text = '{ "employees" : [ { "firstName":"John" , "lastName":"Doe" },{ "firstName":"Anna" , "lastName":"Smith" },{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+        var obj = JSON.parse(text);
+        var firstEmployeeFirstName = obj.employees[0].firstName;
+        var lastEmployeeLastName = obj.employees[2].lastName;
+      
+        document.getElementById("firstEmpFirstName").innerHTML = "firstEmployeeFirstName is = " + firstEmployeeFirstName;
+        document.getElementById("lastEmpLastName").innerHTML = "lastEmployeeLastName is = " + lastEmployeeLastName;
+      };
+    </script>
+  </head>
+  
+  <body>
+    Click Access JSON Object button to Print JSON Object Values
+    
+    <p id="firstEmpFirstName"></p>
+    <p id="lastEmpLastName"></p>
+    
+    <input type="button" onclick="accessJSONObject();" value="Access JSON Object">
+  </body>
+</html>

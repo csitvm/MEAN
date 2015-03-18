@@ -1,0 +1,20 @@
+h1.
+  User List
+div
+  table(border=1)
+    thead
+      tr: th Users
+    tbody
+      each user in userlist
+        tr
+          td= user.user_name
+          td= user.password
+          td= user.age
+          td
+            a(href="/newuser/#{user.user_name}") Delete
+
+a(href="/newuser") Add User
+      
+ul
+ each user in userlist
+   li #{user.user_name} #{user.password} #{user.age}

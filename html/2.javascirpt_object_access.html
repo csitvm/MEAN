@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Accessing JavaScript Objects</title>
+    <script>
+      function accessJSObject() {
+        var person = {
+          firstName:"John", 
+          lastName:"Doe", 
+          age:50, 
+          eyeColor:"blue",
+          fullName:function(){return this.firstName;}
+        };
+
+        var name1 = person.lastName;
+        var name2 = person["lastName"];
+        var name3 = person.fullName();
+      
+        document.getElementById("nameValue1").innerHTML = "nameValue1 is = " + name1;
+        document.getElementById("nameValue2").innerHTML = "nameValue2 is = " + name2;
+        document.getElementById("nameValue3").innerHTML = "nameValue3 is = " + name3;
+      };
+    </script>
+  </head>
+  
+  <body>
+    Click Access JS Object button to Print Object Values
+    
+    <p id="nameValue1"></p>
+    <p id="nameValue2"></p>
+    <p id="nameValue3"></p>
+    
+    <input type="button" onclick="accessJSObject();" value="Access JS Object">
+  </body>
+</html>

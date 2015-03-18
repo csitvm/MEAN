@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Accessing JavaScript Method Chains</title>
+    <script>
+      function accessJSMethodChain() {
+        
+        //define the class
+        var Kitten = function() {
+          this.name = 'Garfield';
+          this.color = 'brown';
+          this.gender = 'male';
+        };
+        
+        Kitten.prototype.setName = function(name) {
+          this.name = name;
+          return this;
+        };
+
+        Kitten.prototype.setColor = function(color) {
+          this.color = color;
+          return this;
+        };
+        
+        Kitten.prototype.setGender = function(gender) {
+          this.gender = gender;
+          return this;
+        };
+
+        Kitten.prototype.fullName = function() {
+          return this.name + ', the ' + this.color + ' ' + this.gender + ' kitten...';
+        };
+        
+        // WITHOUT CHAINING
+        var bob = new Kitten();
+
+        bob.setName('Bob');
+        bob.setColor('black');
+        bob.setGender('male');
+        document.getElementById("withoutChainResults").innerHTML = "withoutChain Kitten is = " + bob.fullName();
+        
+        // WITH CHAINING
+        var kim = new Kitten()
+          .setName('Kim')
+          .setColor('white')
+          .setGender('female');
+        document.getElementById("withChainResults").innerHTML = "withChain Kitten is = " + kim.fullName();  
+      };   
+    </script>
+  </head>
+  
+  <body>
+    Click Access JS Method Chain button to Print JS Method Chain Values
+    
+    <p id="withoutChainResults"></p>
+    <p id="withChainResults"></p>
+    
+    <input type="button" onclick="accessJSMethodChain();" value="Access JS Method Chain">
+  </body>
+</html>

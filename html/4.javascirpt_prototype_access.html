@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Accessing JavaScript Prototype Objects</title>
+    <script>
+      function accessJSPrototypeObject() {
+        function person(first, last, age, eyecolor) {
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eyecolor;
+        };
+
+        var myFriend = new person("John", "Doe", 50, "blue");
+        
+        // Adding a new property to the myFriend object
+        myFriend.nationality = "English";
+        document.getElementById("nationalityInObject").innerHTML = "nationalityInObject is = " + myFriend.nationality;
+        
+        // Adding a new function to the myFriend object
+        myFriend.name = function() {
+          return this.firstName + " " + this.lastName;
+        };
+        document.getElementById("functionCallInObject").innerHTML = "functionCallInObject is = " + myFriend.name();
+        
+        // Adding new property to the prototype
+        person.prototype.nationality = "German";
+        var myFriend = new person("James", "Smith", 30, "black");
+        document.getElementById("nationalityInPrototype").innerHTML = "nationalityInPrototype is = " + myFriend.nationality;
+      };
+    </script>
+  </head>
+  
+  <body>
+    Click Access JS Prototype Object button to Print JS Prototype Object Values
+    
+    <p id="nationalityInObject"></p>
+    <p id="functionCallInObject"></p>
+    <p id="nationalityInPrototype"></p>
+    
+    <input type="button" onclick="accessJSPrototypeObject();" value="Access JS Prototype Object">
+  </body>
+</html>

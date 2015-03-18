@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Printing Variable Values</title>
+    <script>
+      function executeJS() {
+        var length = 16; // Number assigned by a number literal
+        var points = length * 10; // Number assigned by an expression literal
+        var lastName = "Johnson"; // String assigned by a string literal
+        var cars = ["Saab", "Volvo", "BMW"]; // Array assigned by an array literal
+        var person = {firstName:"John", lastName:"Doe"}; // Object assigned by an object literal
+      
+        document.getElementById("lengthValue").innerHTML = "lengthValue is = " + length;
+        document.getElementById("pointsValue").innerHTML = "pointsValue is = " + points;
+        document.getElementById("lastNameValue").innerHTML = "lastNameValue is = " + lastName;
+        document.getElementById("carsValue").innerHTML = "carsValue is = " + cars[0];
+        document.getElementById("personValue").innerHTML = "personValue is = " + person.firstName;
+      };
+    </script>
+  </head>
+  
+  <body>
+    Click Execute JS button to Print Variable Values
+    
+    <p id="lengthValue"></p>
+    <p id="pointsValue"></p>
+    <p id="lastNameValue"></p>
+    <p id="carsValue"></p>
+    <p id="personValue"></p>
+    
+    <input type="button" onclick="executeJS();" value="Execute JS">
+  </body>
+</html>
